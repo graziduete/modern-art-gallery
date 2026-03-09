@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Instagram, ShoppingBag, MessageCircle, Leaf, ArrowRight } from "lucide-react"
+import { Instagram, ShoppingBag, Leaf, ArrowRight } from "lucide-react"
 
 // Mock data for shop products
 const products = [
@@ -111,9 +111,9 @@ export default function LojaPage() {
               </p>
             </div>
             <Button asChild className="btn-blob bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-5 font-bold shrink-0">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/arca.atelierural/" target="_blank" rel="noopener noreferrer">
                 <Instagram className="h-5 w-5 mr-2" />
-                Seguir @arca.galeria
+                @Arca.atelierural
               </a>
             </Button>
           </div>
@@ -123,7 +123,7 @@ export default function LojaPage() {
             {products.map((product, index) => (
               <article 
                 key={product.id} 
-                className={`overflow-hidden bg-card border-2 border-border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-primary group ${
+                className={`overflow-hidden bg-card border-2 border-border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-primary group flex flex-col ${
                   index % 2 === 0 ? "card-creative-1" : "card-creative-2"
                 }`}
               >
@@ -138,26 +138,27 @@ export default function LojaPage() {
                     <span>{product.category}</span>
                   </span>
                 </div>
-                <div className="p-5">
+                <div className="p-5 flex flex-col flex-1">
                   <h3 className="font-serif text-lg font-bold text-card-foreground group-hover:text-primary transition-colors">
                     {product.name}
                   </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-1 text-sm text-muted-foreground line-clamp-2 min-h-[2.5rem]">
                     {product.description}
                   </p>
-                  <p className="mt-4 text-2xl font-black text-primary">
+                  <p className="mt-4 text-2xl font-black text-primary tabular-nums text-center">
                     {product.price}
                   </p>
                   <Button 
                     asChild 
-                    className="btn-pill-right mt-4 w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold"
+                    className="btn-blob mt-auto pt-5 w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-all duration-300"
                   >
                     <a 
-                      href={`https://instagram.com/direct/t/arca.galeria?text=Olá! Tenho interesse no produto: ${product.name}`} 
+                      href={`https://www.instagram.com/direct/t/arca.atelierural?text=Olá! Tenho interesse no produto: ${encodeURIComponent(product.name)}`} 
                       target="_blank" 
                       rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2"
                     >
-                      <MessageCircle className="h-4 w-4 mr-2" />
+                      <Instagram className="h-5 w-5 shrink-0" />
                       Comprar no Instagram
                     </a>
                   </Button>

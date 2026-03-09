@@ -80,6 +80,117 @@ const artworksData: Record<string, {
     price: "R$ 8.500",
     images: ["/images/artwork-3.jpg", "/images/artwork-7.jpg", "/images/artwork-8.jpg"],
   },
+  // Mobiliário In-Comodo
+  "f1": {
+    id: "f1",
+    title: "Poltrona Aurora",
+    artist: "Estudio Arca",
+    description: "Poltrona que une conforto e design sustentável. Criada a partir de madeira de demolição e estrutura metálica reutilizada, a Aurora transforma materiais descartados em um assento que dialoga com a luz e o espaço.",
+    materials: "Madeira de demolição, estrutura metálica reciclada, tecido de reúso",
+    dimensions: "85 x 95 x 75 cm",
+    isAnamorphic: false,
+    hasVideo: true,
+    isRentable: true,
+    isForSale: true,
+    price: "R$ 4.200",
+    images: ["/images/furniture-1.jpg"],
+  },
+  "f2": {
+    id: "f2",
+    title: "Mesa Horizonte",
+    artist: "Carlos Mendes",
+    description: "Mesa de centro que evoca a linha do horizonte. O tampo em madeira maciça de reaproveitamento repousa sobre base em ferro recuperado, criando um diálogo entre rusticidade e contemporaneidade.",
+    materials: "Madeira de demolição, ferro reciclado",
+    dimensions: "120 x 60 x 45 cm",
+    isAnamorphic: false,
+    hasVideo: false,
+    isRentable: true,
+    isForSale: false,
+    images: ["/images/furniture-2.jpg"],
+  },
+  "f3": {
+    id: "f3",
+    title: "Luminária Cosmos",
+    artist: "Julia Oliveira",
+    description: "Pendente que recria o cosmo em materiais terrestres. Vidros e metais descartados compõem uma peça de iluminação que transforma qualquer ambiente em uma experiência sensorial única.",
+    materials: "Vidro reciclado, metal de reúso, fiação reaproveitada",
+    dimensions: "40 x 40 x 80 cm",
+    isAnamorphic: false,
+    hasVideo: true,
+    isRentable: true,
+    isForSale: true,
+    price: "R$ 2.800",
+    images: ["/images/furniture-3.jpg"],
+  },
+  "f4": {
+    id: "f4",
+    title: "Estante Fragmentos",
+    artist: "Marina Santos",
+    description: "Estante modular feita de portas e janelas recuperadas de demolições. Cada prateleira carrega a história de seu material de origem, oferecendo um armazenamento que é também uma obra de arte.",
+    materials: "Portas e janelas de demolição, madeira reaproveitada",
+    dimensions: "180 x 90 x 40 cm",
+    isAnamorphic: false,
+    hasVideo: false,
+    isRentable: false,
+    isForSale: true,
+    price: "R$ 6.500",
+    images: ["/images/furniture-4.jpg"],
+  },
+  "f5": {
+    id: "f5",
+    title: "Banco Raízes",
+    artist: "Pedro Almeida",
+    description: "Banco escultural que evoca as raízes das árvores. Criado a partir de troncos e ramos descartados, combinados com elementos metálicos de reúso, é uma peça que conecta natureza e design.",
+    materials: "Madeira de raízes e troncos, metal reciclado",
+    dimensions: "45 x 100 x 45 cm",
+    isAnamorphic: false,
+    hasVideo: true,
+    isRentable: true,
+    isForSale: true,
+    price: "R$ 3.900",
+    images: ["/images/furniture-1.jpg"],
+  },
+  "f6": {
+    id: "f6",
+    title: "Aparador Metamorfose",
+    artist: "Fernanda Dias",
+    description: "Aparador que nasce da transformação. Portas antigas, gavetas de máquinas de costura e ferragens recuperadas se encontram em uma peça única de armazenamento e exibição.",
+    materials: "Portas antigas, madeira de reúso, ferragens recuperadas",
+    dimensions: "140 x 85 x 45 cm",
+    isAnamorphic: false,
+    hasVideo: false,
+    isRentable: true,
+    isForSale: false,
+    images: ["/images/furniture-2.jpg"],
+  },
+  "f7": {
+    id: "f7",
+    title: "Pendente Constelação",
+    artist: "Roberto Lima",
+    description: "Luminária pendente que sugere uma constelação suspensa. Fragmentos de vidro e metal em tons escuros criam um jogo de luz e sombra, iluminando com poesia qualquer ambiente.",
+    materials: "Vidro reciclado, metal negro de reúso, cabo reaproveitado",
+    dimensions: "35 x 35 x 95 cm",
+    isAnamorphic: false,
+    hasVideo: true,
+    isRentable: false,
+    isForSale: true,
+    price: "R$ 3.200",
+    images: ["/images/furniture-3.jpg"],
+  },
+  "f8": {
+    id: "f8",
+    title: "Mesa de Centro Ciclos",
+    artist: "Ana Beatriz Costa",
+    description: "Mesa de centro que celebra os ciclos da matéria. O tampo em madeira resinada incorpora fragmentos de materiais diversos, criando uma superfície que conta histórias de transformação e reúso.",
+    materials: "Madeira de reúso, resina epóxi, metais recuperados",
+    dimensions: "110 x 55 x 42 cm",
+    isAnamorphic: false,
+    hasVideo: false,
+    isRentable: true,
+    isForSale: true,
+    price: "R$ 5.400",
+    images: ["/images/furniture-4.jpg"],
+  },
 }
 
 // Default artwork for IDs not in our mock data
@@ -114,11 +225,11 @@ export default function ArtworkPage({ params }: { params: Promise<{ id: string }
           {/* Back button */}
           <button
             type="button"
-            onClick={() => router.push("/galeria")}
+            onClick={() => router.back()}
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 py-2 -ml-2"
           >
             <ArrowLeft className="h-4 w-4" />
-            Voltar para galeria
+            Voltar
           </button>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
