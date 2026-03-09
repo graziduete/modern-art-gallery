@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: '/icon.svg',
-    apple: '/apple-icon',
+    icon: '/images/arca-logo.jpg',
+    apple: '/images/arca-logo.jpg',
   },
 }
 
