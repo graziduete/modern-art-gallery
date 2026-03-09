@@ -13,13 +13,14 @@ const heroImages = [
   "/images/hero-3.jpg",
 ]
 
-// Interactive hotspots on the gallery image
+// Hotspots reorganizados para acompanhar a imagem orgânica (oval) da galeria
+// Posições balanceadas: bordas e elementos visuais, sem sobrepor o centro
 const hotspots = [
-  { id: 1, x: 75, y: 12, label: "Escultura Principal" },
-  { id: 2, x: 82, y: 28, label: "Moldura Reciclada" },
-  { id: 3, x: 68, y: 45, label: "Textura Orgânica" },
-  { id: 4, x: 55, y: 65, label: "Base Sustentável" },
-  { id: 5, x: 40, y: 85, label: "Reflexo Intencional" },
+  { id: 1, x: 28, y: 22, label: "Escultura Principal" },
+  { id: 2, x: 72, y: 18, label: "Moldura Reciclada" },
+  { id: 3, x: 52, y: 48, label: "Textura Orgânica" },
+  { id: 4, x: 38, y: 78, label: "Base Sustentável" },
+  { id: 5, x: 78, y: 72, label: "Reflexo Intencional" },
 ]
 
 export function HeroSection() {
@@ -181,7 +182,7 @@ export function HeroSection() {
               {hotspots.map((spot) => (
                 <button
                   key={spot.id}
-                  className={`absolute z-20 transition-all duration-300 ${
+                  className={`absolute z-20 transition-all duration-300 -translate-x-1/2 -translate-y-1/2 ${
                     activeHotspot === spot.id ? "scale-125" : "hover:scale-110"
                   }`}
                   style={{ left: `${spot.x}%`, top: `${spot.y}%` }}
@@ -197,9 +198,13 @@ export function HeroSection() {
                     <span className="text-xs font-bold">+</span>
                   </span>
                   
-                  {/* Label tooltip */}
+                  {/* Label tooltip - posiciona à esquerda se ícone estiver à direita */}
                   {activeHotspot === spot.id && (
-                    <span className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-accent text-accent-foreground px-4 py-2 text-sm font-medium whitespace-nowrap z-30 shadow-lg">
+                    <span
+                      className={`absolute top-1/2 -translate-y-1/2 bg-accent text-accent-foreground px-4 py-2 text-sm font-medium whitespace-nowrap z-30 shadow-lg ${
+                        spot.x > 60 ? "right-full mr-4" : "left-full ml-4"
+                      }`}
+                    >
                       {spot.label}
                       <X className="inline-block ml-2 h-3 w-3" />
                     </span>
