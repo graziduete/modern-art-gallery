@@ -10,8 +10,8 @@ const artists = [
   {
     id: "a1",
     name: "Marina Santos",
-    specialty: "Escultura & Instalacao",
-    bio: "Artista plastica especializada em transformar residuos industriais em esculturas monumentais.",
+    specialty: "Escultura & Instalação",
+    bio: "Artista plástica especializada em transformar resíduos industriais em esculturas monumentais.",
     imageUrl: "/images/artwork-1.jpg",
     worksCount: 12,
     instagram: "@marina.santos.art",
@@ -21,7 +21,7 @@ const artists = [
     id: "a2",
     name: "Carlos Mendes",
     specialty: "Mixed Media",
-    bio: "Criador de obras que mesclam tecnicas tradicionais com materiais reciclados urbanos.",
+    bio: "Criador de obras que mesclam técnicas tradicionais com materiais reciclados urbanos.",
     imageUrl: "/images/artwork-2.jpg",
     worksCount: 8,
     instagram: "@carlosmendes",
@@ -29,8 +29,8 @@ const artists = [
   {
     id: "a3",
     name: "Julia Oliveira",
-    specialty: "Instalacao Interativa",
-    bio: "Suas obras convidam o espectador a participar ativamente da experiencia artistica.",
+    specialty: "Instalação Interativa",
+    bio: "Suas obras convidam o espectador a participar ativamente da experiência artística.",
     imageUrl: "/images/artwork-3.jpg",
     worksCount: 15,
     instagram: "@juliaoliveira.art",
@@ -40,7 +40,7 @@ const artists = [
     id: "a4",
     name: "Roberto Lima",
     specialty: "Arte Suspensa",
-    bio: "Especialista em instalacoes aereas que desafiam a gravidade e a percepcao.",
+    bio: "Especialista em instalações aéreas que desafiam a gravidade e a percepção.",
     imageUrl: "/images/artwork-4.jpg",
     worksCount: 6,
     instagram: "@robertolima",
@@ -49,7 +49,7 @@ const artists = [
     id: "a5",
     name: "Ana Beatriz Costa",
     specialty: "Pintura Anamórfica",
-    bio: "Cria obras que se transformam completamente dependendo do angulo de visao.",
+    bio: "Cria obras que se transformam completamente dependendo do ângulo de visão.",
     imageUrl: "/images/artwork-5.jpg",
     worksCount: 10,
     instagram: "@anabeatriz.costa",
@@ -59,7 +59,7 @@ const artists = [
     id: "a6",
     name: "Pedro Almeida",
     specialty: "Textile Art",
-    bio: "Transforma tecidos descartados em tapeçarias e instalacoes texturais.",
+    bio: "Transforma tecidos descartados em tapeçarias e instalações texturais.",
     imageUrl: "/images/artwork-6.jpg",
     worksCount: 9,
     instagram: "@pedroalmeida.art",
@@ -67,8 +67,8 @@ const artists = [
   {
     id: "a7",
     name: "Fernanda Dias",
-    specialty: "Escultura Organica",
-    bio: "Suas pecas celebram a conexao entre natureza e materiais reaproveitados.",
+    specialty: "Escultura Orgânica",
+    bio: "Suas peças celebram a conexão entre natureza e materiais reaproveitados.",
     imageUrl: "/images/artwork-7.jpg",
     worksCount: 11,
     instagram: "@fernandadias",
@@ -78,7 +78,7 @@ const artists = [
     id: "a8",
     name: "Lucas Ferreira",
     specialty: "Light Art",
-    bio: "Cria instalacoes luminosas usando materiais reciclados e LEDs sustentaveis.",
+    bio: "Cria instalações luminosas usando materiais reciclados e LEDs sustentáveis.",
     imageUrl: "/images/artwork-8.jpg",
     worksCount: 7,
     instagram: "@lucasferreira.light",
@@ -105,7 +105,7 @@ export default function ArtistasPage() {
                 Artistas
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Conheca os visionarios por tras das obras. Artistas que transformam o descartado em extraordinario.
+                Conheça os visionários por trás das obras. Artistas que transformam o descartado em extraordinário.
               </p>
             </div>
             <Button asChild className="btn-blob bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-bold">

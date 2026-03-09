@@ -41,8 +41,8 @@ const artworksData: Record<string, {
     id: "1",
     title: "Metamorfose Urbana",
     artist: "Marina Santos",
-    description: "Uma exploracao visual da transformacao constante das cidades. Esta escultura e composta inteiramente de materiais recolhidos nas ruas de Sao Paulo - pecas de metal descartadas, fragmentos de sinalizacao urbana e restos de construcao civil. A obra convida o espectador a reconsiderar o que chamamos de lixo e a beleza escondida nos restos da vida urbana.",
-    materials: "Metal reciclado, sinalizacao descartada, concreto, vidro reutilizado",
+    description: "Uma exploração visual da transformação constante das cidades. Esta escultura é composta inteiramente de materiais recolhidos nas ruas de São Paulo - peças de metal descartadas, fragmentos de sinalização urbana e restos de construção civil. A obra convida o espectador a reconsiderar o que chamamos de lixo e a beleza escondida nos restos da vida urbana.",
+    materials: "Metal reciclado, sinalização descartada, concreto, vidro reutilizado",
     dimensions: "180 x 120 x 90 cm",
     isAnamorphic: true,
     hasVideo: true,
@@ -56,8 +56,8 @@ const artworksData: Record<string, {
     id: "2",
     title: "Reflexos do Tempo",
     artist: "Carlos Mendes",
-    description: "Uma instalacao que utiliza espelhos recuperados de edificios demolidos para criar um jogo de reflexos que representa a passagem do tempo. Cada espelho carrega a historia de seu local de origem, criando camadas de memoria visual.",
-    materials: "Espelhos antigos, estrutura de madeira de demolicao, LED",
+    description: "Uma instalação que utiliza espelhos recuperados de edifícios demolidos para criar um jogo de reflexos que representa a passagem do tempo. Cada espelho carrega a história de seu local de origem, criando camadas de memória visual.",
+    materials: "Espelhos antigos, estrutura de madeira de demolição, LED",
     dimensions: "200 x 150 x 100 cm",
     isAnamorphic: false,
     hasVideo: false,
@@ -69,7 +69,7 @@ const artworksData: Record<string, {
     id: "3",
     title: "Fragmentos de Memoria",
     artist: "Julia Oliveira",
-    description: "Uma colagem tridimensional que incorpora fotografias antigas resgatadas de bazares e brechos, criando uma narrativa visual sobre memorias coletivas e a passagem do tempo.",
+    description: "Uma colagem tridimensional que incorpora fotografias antigas resgatadas de bazares e brechós, criando uma narrativa visual sobre memórias coletivas e a passagem do tempo.",
     materials: "Fotografias vintage, madeira reciclada, resina, tecido",
     dimensions: "150 x 100 x 30 cm",
     isAnamorphic: false,
@@ -86,9 +86,9 @@ const defaultArtwork = {
   id: "default",
   title: "Obra da Galeria",
   artist: "Artista Arca",
-  description: "Uma obra unica criada com materiais sustentaveis, representando a visao da galeria Arca de transformar o descartado em arte extraordinaria.",
+  description: "Uma obra única criada com materiais sustentáveis, representando a visão da galeria Arca de transformar o descartado em arte extraordinária.",
   materials: "Materiais reciclados diversos",
-  dimensions: "Dimensoes variaveis",
+  dimensions: "Dimensões variáveis",
   isAnamorphic: false,
   hasVideo: false,
   isRentable: true,
@@ -177,13 +177,13 @@ export default function ArtworkPage({ params }: { params: Promise<{ id: string }
                 {artwork.hasVideo && (
                   <Badge variant="secondary" className="bg-accent text-accent-foreground">
                     <Video className="h-3 w-3 mr-1" />
-                    Video
+                    Vídeo
                   </Badge>
                 )}
                 {artwork.isRentable && (
                   <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
                     <Tag className="h-3 w-3 mr-1" />
-                    Alugavel
+                    Alugável
                   </Badge>
                 )}
                 {artwork.isForSale && (
@@ -274,9 +274,9 @@ export default function ArtworkPage({ params }: { params: Promise<{ id: string }
                   <div className="flex items-start gap-3">
                     <Eye className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <p className="font-medium text-foreground">Obra Anamorfica</p>
+                      <p className="font-medium text-foreground">Obra Anamórfica</p>
                       <p className="text-sm text-muted-foreground">
-                        Esta obra muda de aparencia conforme o angulo de visao do observador.
+                        Esta obra muda de aparência conforme o ângulo de visão do observador.
                       </p>
                     </div>
                   </div>

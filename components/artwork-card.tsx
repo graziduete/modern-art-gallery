@@ -60,13 +60,13 @@ export function ArtworkCard({
             {hasVideo && (
               <span className="inline-flex items-center gap-1 bg-background/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-bold text-foreground rounded-sm">
                 <Play className="h-2.5 w-2.5 fill-current" />
-                Video
+                Vídeo
               </span>
             )}
             {isRentable && (
               <span className="inline-flex items-center gap-1 bg-accent/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-bold text-accent-foreground rounded-sm">
                 <Calendar className="h-2.5 w-2.5" />
-                Alugavel
+                Alugável
               </span>
             )}
             {isForSale && (

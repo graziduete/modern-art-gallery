@@ -176,13 +176,13 @@ export default function GalleryPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="py-12">
             <span className="tag-slant inline-block px-5 py-2 bg-accent text-accent-foreground text-sm font-bold tracking-[0.15em] uppercase">
-              <span>Colecao</span>
+              <span>Coleção</span>
             </span>
             <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-black text-foreground tracking-tight">
               Galeria
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Explore nossa colecao completa de obras sustentaveis. Cada peca conta uma historia unica de transformacao e arte consciente.
+              Explore nossa coleção completa de obras sustentáveis. Cada peça conta uma história única de transformação e arte consciente.
             </p>
           </div>
         </div>

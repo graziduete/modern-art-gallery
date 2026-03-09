@@ -48,7 +48,7 @@ export function RentalModal({ isOpen, onClose, artworkTitle }: RentalModalProps)
         <DialogHeader>
           <DialogTitle className="font-serif text-2xl">Solicitar Aluguel</DialogTitle>
           <DialogDescription>
-            Preencha o formulario para solicitar o aluguel da obra &quot;{artworkTitle}&quot;
+            Preencha o formulário para solicitar o aluguel da obra &quot;{artworkTitle}&quot;
           </DialogDescription>
         </DialogHeader>
 
@@ -58,10 +58,10 @@ export function RentalModal({ isOpen, onClose, artworkTitle }: RentalModalProps)
               <Mail className="h-8 w-8 text-secondary" />
             </div>
             <h3 className="font-serif text-xl font-semibold text-foreground">
-              Solicitacao enviada!
+              Solicitação enviada!
             </h3>
             <p className="mt-2 text-muted-foreground">
-              Entraremos em contato em ate 48 horas com mais informacoes.
+              Entraremos em contato em até 48 horas com mais informações.
             </p>
             <Button onClick={handleClose} className="mt-6 bg-primary hover:bg-primary/90 text-primary-foreground">
               Fechar
@@ -148,7 +148,7 @@ export function RentalModal({ isOpen, onClose, artworkTitle }: RentalModalProps)
                 disabled={isSubmitting}
                 className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
               >
-                {isSubmitting ? "Enviando..." : "Enviar solicitacao"}
+                {isSubmitting ? "Enviando..." : "Enviar solicitação"}
               </Button>
             </div>
           </form>

@@ -36,7 +36,7 @@ const categories = [
   { value: "all", label: "Todas as categorias" },
   { value: "escultura", label: "Escultura" },
   { value: "pintura", label: "Pintura" },
-  { value: "instalacao", label: "Instalacao" },
+  { value: "instalacao", label: "Instalação" },
   { value: "mixed-media", label: "Mixed Media" },
   { value: "fotografia", label: "Fotografia" },
 ]
@@ -44,8 +44,8 @@ const categories = [
 const statuses = [
   { value: "all", label: "Todos os status" },
   { value: "for-sale", label: "A venda" },
-  { value: "rentable", label: "Alugavel" },
-  { value: "exposed", label: "Em exposicao" },
+  { value: "rentable", label: "Alugável" },
+  { value: "exposed", label: "Em exposição" },
 ]
 
 export function GalleryFilters({
@@ -121,7 +121,7 @@ export function GalleryFilters({
           htmlFor="hasVideo"
           className="text-sm font-bold text-foreground cursor-pointer"
         >
-          Apenas com video
+          Apenas com vídeo
         </label>
       </div>
 

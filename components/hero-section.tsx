@@ -17,8 +17,8 @@ const heroImages = [
 const hotspots = [
   { id: 1, x: 75, y: 12, label: "Escultura Principal" },
   { id: 2, x: 82, y: 28, label: "Moldura Reciclada" },
-  { id: 3, x: 68, y: 45, label: "Textura Organica" },
-  { id: 4, x: 55, y: 65, label: "Base Sustentavel" },
+  { id: 3, x: 68, y: 45, label: "Textura Orgânica" },
+  { id: 4, x: 55, y: 65, label: "Base Sustentável" },
   { id: 5, x: 40, y: 85, label: "Reflexo Intencional" },
 ]
 
@@ -93,7 +93,7 @@ export function HeroSection() {
             
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-black leading-[0.9] tracking-tight drop-shadow-sm">
               <span className="block text-accent">ARCA</span>
-              <span className="block text-accent">ATELIE</span>
+              <span className="block text-accent">ATELIÊ</span>
               <span className="block text-accent">RURAL</span>
             </h1>
             
@@ -102,7 +102,7 @@ export function HeroSection() {
             </p>
 
             <p className="mt-8 text-base sm:text-lg text-white/80 max-w-md leading-relaxed font-medium">
-              Obras que transformam perspectivas. Cada peca e criada a partir de materiais reutilizados, ganhando nova vida e novo significado.
+              Obras que transformam perspectivas. Cada peça é criada a partir de materiais reutilizados, ganhando nova vida e novo significado.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -124,7 +124,7 @@ export function HeroSection() {
               >
                 <Link href="#video">
                   <Play className="mr-2 h-5 w-5" />
-                  Ver Video
+                  Ver Vídeo
                 </Link>
               </Button>
             </div>

@@ -16,10 +16,10 @@ const hotspots = [
 
 const features = {
   recycled: { icon: Recycle, title: "100% Reciclado", description: "Materiais reutilizados" },
-  anamorphic: { icon: Eye, title: "Arte Anamorfica", description: "Muda com seu olhar" },
-  unique: { icon: Sparkles, title: "Peca Unica", description: "Impossivel replicar" },
-  texture: { icon: Recycle, title: "Textura Natural", description: "Acabamento organico" },
-  materials: { icon: Recycle, title: "Origem Rastreavel", description: "De onde veio cada peca" },
+  anamorphic: { icon: Eye, title: "Arte Anamórfica", description: "Muda com seu olhar" },
+  unique: { icon: Sparkles, title: "Peça Única", description: "Impossível replicar" },
+  texture: { icon: Recycle, title: "Textura Natural", description: "Acabamento orgânico" },
+  materials: { icon: Recycle, title: "Origem Rastreável", description: "De onde veio cada peça" },
 }
 
 export function AboutSection() {
@@ -100,13 +100,13 @@ export function AboutSection() {
             </h2>
             
             <p className="mt-8 text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              A <strong className="text-foreground">ARCA</strong> e uma inovadora galeria de arte sustentavel dedicada a transformar materiais descartados em obras que inspiram novos pontos de vista.
+              A <strong className="text-foreground">ARCA</strong> é uma inovadora galeria de arte sustentável dedicada a transformar materiais descartados em obras que inspiram novos pontos de vista.
             </p>
             <p className="mt-4 text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              Trabalhamos com artistas visionarios que enxergam potencial onde outros veem descarte, criando pecas unicas que contam historias de transformacao e renascimento.
+              Trabalhamos com artistas visionários que enxergam potencial onde outros veem descarte, criando peças únicas que contam histórias de transformação e renascimento.
             </p>
             <p className="mt-4 text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              Nossa missao e conectar coleccionadores, empresas e amantes da arte com obras que fazem a diferenca.
+              Nossa missão é conectar colecionadores, empresas e amantes da arte com obras que fazem a diferença.
             </p>
 
             <Button 

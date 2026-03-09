@@ -41,7 +41,7 @@ const furnitureItems = [
   },
   {
     id: "f3",
-    title: "Luminaria Cosmos",
+    title: "Luminária Cosmos",
     artist: "Julia Oliveira",
     imageUrl: "/images/furniture-3.jpg",
     type: "iluminacao",
@@ -61,7 +61,7 @@ const furnitureItems = [
   },
   {
     id: "f5",
-    title: "Banco Raizes",
+    title: "Banco Raízes",
     artist: "Pedro Almeida",
     imageUrl: "/images/furniture-1.jpg",
     type: "assento",
@@ -81,7 +81,7 @@ const furnitureItems = [
   },
   {
     id: "f7",
-    title: "Pendente Constelacao",
+    title: "Pendente Constelação",
     artist: "Roberto Lima",
     imageUrl: "/images/furniture-3.jpg",
     type: "iluminacao",
@@ -105,7 +105,7 @@ const furnitureTypes = [
   { value: "all", label: "Todos os tipos" },
   { value: "assento", label: "Assentos" },
   { value: "mesa", label: "Mesas" },
-  { value: "iluminacao", label: "Iluminacao" },
+  { value: "iluminacao", label: "Iluminação" },
   { value: "armazenamento", label: "Armazenamento" },
 ]
 
@@ -150,14 +150,14 @@ export default function InComodoPage() {
               <span className="tag-slant inline-block px-5 py-2 bg-secondary text-secondary-foreground text-sm font-bold tracking-[0.15em] uppercase">
                 <span className="flex items-center gap-2">
                   <Sofa className="h-4 w-4" />
-                  Mobiliario Artistico
+                  Mobiliário Artístico
                 </span>
               </span>
               <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-black text-foreground tracking-tight">
                 In-Comodo
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Pecas de mobiliario que transcendem a funcionalidade. Cada item e uma obra de arte sustentavel que transforma seu espaco em uma galeria.
+                Peças de mobiliário que transcendem a funcionalidade. Cada item é uma obra de arte sustentável que transforma seu espaço em uma galeria.
               </p>
             </div>
             <Button asChild className="btn-blob bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-base font-bold">
@@ -178,7 +178,7 @@ export default function InComodoPage() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Buscar moveis..."
+                placeholder="Buscar móveis..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="pl-10 btn-pill-right"
@@ -186,7 +186,7 @@ export default function InComodoPage() {
             </div>
             <Select value={furnitureType} onValueChange={setFurnitureType}>
               <SelectTrigger className="w-full sm:w-48">
-                <SelectValue placeholder="Tipo de movel" />
+                <SelectValue placeholder="Tipo de móvel" />
               </SelectTrigger>
               <SelectContent>
                 {furnitureTypes.map((type) => (
@@ -203,7 +203,7 @@ export default function InComodoPage() {
               <SelectContent>
                 <SelectItem value="all">Todos</SelectItem>
                 <SelectItem value="for-sale">A venda</SelectItem>
-                <SelectItem value="rentable">Alugavel</SelectItem>
+                <SelectItem value="rentable">Alugável</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -213,7 +213,7 @@ export default function InComodoPage() {
             <span className="tag-slant inline-block px-4 py-1.5 bg-muted text-muted-foreground text-sm font-bold">
               <span className="flex items-center gap-2">
                 <Sparkles className="h-4 w-4" />
-                {filteredItems.length} peca{filteredItems.length !== 1 ? "s" : ""}
+                {filteredItems.length} peça{filteredItems.length !== 1 ? "s" : ""}
               </span>
             </span>
           </div>
@@ -238,14 +238,14 @@ export default function InComodoPage() {
                           <span className="tag-slant flex items-center gap-1.5 bg-background/90 backdrop-blur-sm px-3 py-1.5 text-xs font-bold text-foreground">
                             <span className="flex items-center gap-1.5">
                               <Video className="h-3 w-3" />
-                              Video
+                              Vídeo
                             </span>
                           </span>
                         )}
                         {item.isRentable && (
                           <span className="btn-pill-left flex items-center gap-1.5 bg-secondary/90 backdrop-blur-sm px-3 py-1.5 text-xs font-bold text-secondary-foreground">
                             <Tag className="h-3 w-3" />
-                            Alugavel
+                            Alugável
                           </span>
                         )}
                       </div>
@@ -263,7 +263,7 @@ export default function InComodoPage() {
           ) : (
             <div className="py-16 text-center card-creative-1 bg-muted/50 border-2 border-dashed border-border">
               <p className="text-lg text-muted-foreground">
-                Nenhuma peca encontrada com os filtros selecionados.
+                Nenhuma peça encontrada com os filtros selecionados.
               </p>
             </div>
           )}

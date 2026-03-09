@@ -93,7 +93,7 @@ export function FeaturedGrid() {
               <span>Destaques</span>
             </span>
             <h2 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-black text-foreground leading-[0.85] tracking-tight">
-              obras em<br />evidencia
+              obras em<br />evidência
             </h2>
           </div>
           <Button asChild variant="outline" size="lg" className="btn-blob shrink-0 border-2 border-foreground text-foreground hover:bg-foreground hover:text-background bg-transparent px-8">
@@ -149,20 +149,20 @@ export function FeaturedGrid() {
                           <span className="tag-slant flex items-center gap-1.5 bg-background/90 backdrop-blur-sm px-3 py-1.5 text-xs font-bold text-foreground">
                             <span className="flex items-center gap-1.5">
                               <Play className="h-3 w-3 fill-current" />
-                              Video
+                              Vídeo
                             </span>
                           </span>
                         )}
                         {artwork.isRentable && (
                           <span className="btn-pill-left flex items-center gap-1.5 bg-accent/90 backdrop-blur-sm px-3 py-1.5 text-xs font-bold text-accent-foreground">
                             <Calendar className="h-3 w-3" />
-                            Alugavel
+                            Alugável
                           </span>
                         )}
                         {artwork.isForSale && (
                           <span className="btn-pill-right flex items-center gap-1.5 bg-primary/90 backdrop-blur-sm px-3 py-1.5 text-xs font-bold text-primary-foreground">
                             <ShoppingBag className="h-3 w-3" />
-                            A Venda
+                            À Venda
                           </span>
                         )}
                       </div>

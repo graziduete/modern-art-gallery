@@ -40,7 +40,7 @@ export function CategoryCircles() {
             Explore a Arca
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Descubra mais sobre nosso universo de arte sustentavel
+            Descubra mais sobre nosso universo de arte sustentável
           </p>
         </div>
 

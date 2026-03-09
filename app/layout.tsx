@@ -9,13 +9,13 @@ const _inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://v0-modern-art-gallery-tau.vercel.app'),
-  title: 'Arca | Galeria Upcycling de Arte Sustentavel',
-  description: 'Obras sustentaveis que se transformam com o ponto de vista. Galeria de arte contemporanea com pecas unicas para aluguel e venda.',
+  title: 'Arca | Galeria Upcycling de Arte Sustentável',
+  description: 'Obras sustentáveis que se transformam com o ponto de vista. Galeria de arte contemporânea com peças únicas para aluguel e venda.',
   generator: 'v0.app',
-  keywords: ['galeria de arte', 'arte sustentavel', 'upcycling', 'obras de arte', 'aluguel de obras'],
+  keywords: ['galeria de arte', 'arte sustentável', 'upcycling', 'obras de arte', 'aluguel de obras'],
   openGraph: {
-    title: 'Arca | Galeria Upcycling de Arte Sustentavel',
-    description: 'Obras sustentaveis que se transformam com o ponto de vista. Galeria de arte contemporanea com pecas unicas para aluguel e venda.',
+    title: 'Arca | Galeria Upcycling de Arte Sustentável',
+    description: 'Obras sustentáveis que se transformam com o ponto de vista. Galeria de arte contemporânea com peças únicas para aluguel e venda.',
     url: '/',
     siteName: 'Arca | Galeria Upcycling',
     type: 'website',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: '/images/arca-logo.jpg',
         width: 800,
         height: 418,
-        alt: 'Logo da Arca - Galeria Upcycling de Arte Sustentavel',
+        alt: 'Logo da Arca - Galeria Upcycling de Arte Sustentável',
       },
     ],
   },

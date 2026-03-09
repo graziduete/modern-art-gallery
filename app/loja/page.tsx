@@ -9,7 +9,7 @@ const products = [
   {
     id: "p1",
     name: "Print Metamorfose",
-    description: "Impressao em papel reciclado A3",
+    description: "Impressão em papel reciclado A3",
     price: "R$ 89,00",
     imageUrl: "/images/product-1.jpg",
     category: "prints",
@@ -17,7 +17,7 @@ const products = [
   {
     id: "p2",
     name: "Pack Adesivos Arca",
-    description: "Kit com 12 adesivos sustentaveis",
+    description: "Kit com 12 adesivos sustentáveis",
     price: "R$ 35,00",
     imageUrl: "/images/product-2.jpg",
     category: "adesivos",
@@ -25,7 +25,7 @@ const products = [
   {
     id: "p3",
     name: "Plaquinha Decorativa",
-    description: "Peca artesanal em madeira reciclada",
+    description: "Peça artesanal em madeira reciclada",
     price: "R$ 120,00",
     imageUrl: "/images/product-3.jpg",
     category: "plaquinhas",
@@ -33,7 +33,7 @@ const products = [
   {
     id: "p4",
     name: "Ecobag Arca",
-    description: "Sacola de algodao organico",
+    description: "Sacola de algodão orgânico",
     price: "R$ 65,00",
     imageUrl: "/images/product-4.jpg",
     category: "acessorios",
@@ -41,14 +41,14 @@ const products = [
   {
     id: "p5",
     name: "Print Horizonte Invertido",
-    description: "Impressao em papel reciclado A2",
+    description: "Impressão em papel reciclado A2",
     price: "R$ 129,00",
     imageUrl: "/images/product-1.jpg",
     category: "prints",
   },
   {
     id: "p6",
-    name: "Lambe-Lambe Colecao",
+    name: "Lambe-Lambe Coleção",
     description: "Kit com 6 posters colantes",
     price: "R$ 45,00",
     imageUrl: "/images/product-2.jpg",
@@ -57,7 +57,7 @@ const products = [
   {
     id: "p7",
     name: "Plaquinha Natureza",
-    description: "Peca artesanal em madeira de reflorestamento",
+    description: "Peça artesanal em madeira de reflorestamento",
     price: "R$ 95,00",
     imageUrl: "/images/product-3.jpg",
     category: "plaquinhas",
@@ -65,7 +65,7 @@ const products = [
   {
     id: "p8",
     name: "Camiseta Arca",
-    description: "100% algodao organico",
+    description: "100% algodão orgânico",
     price: "R$ 89,00",
     imageUrl: "/images/product-4.jpg",
     category: "acessorios",
@@ -91,7 +91,7 @@ export default function LojaPage() {
               Loja
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Leve um pedaco da Arca para casa. Prints, adesivos, plaquinhas e mais - todos feitos com materiais sustentaveis.
+              Leve um pedaço da Arca para casa. Prints, adesivos, plaquinhas e mais - todos feitos com materiais sustentáveis.
             </p>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function LojaPage() {
             <div className="flex-1">
               <h3 className="font-serif text-xl font-bold text-foreground">Compras via Instagram</h3>
               <p className="mt-2 text-muted-foreground">
-                Todas as compras sao realizadas atraves do nosso Instagram. Clique no botao do produto para ser direcionado ao DM.
+                Todas as compras são realizadas através do nosso Instagram. Clique no botão do produto para ser direcionado ao DM.
               </p>
             </div>
             <Button asChild className="btn-blob bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-5 font-bold shrink-0">
@@ -153,7 +153,7 @@ export default function LojaPage() {
                     className="btn-pill-right mt-4 w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold"
                   >
                     <a 
-                      href={`https://instagram.com/direct/t/arca.galeria?text=Ola! Tenho interesse no produto: ${product.name}`} 
+                      href={`https://instagram.com/direct/t/arca.galeria?text=Olá! Tenho interesse no produto: ${product.name}`} 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
@@ -170,7 +170,7 @@ export default function LojaPage() {
           <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-3 px-6 py-4 bg-accent/10 card-creative-2 text-muted-foreground">
               <Leaf className="h-5 w-5 text-accent" />
-              <span className="font-medium">Todos os produtos sao feitos sob demanda com materiais sustentaveis</span>
+              <span className="font-medium">Todos os produtos são feitos sob demanda com materiais sustentáveis</span>
             </div>
           </div>
         </div>

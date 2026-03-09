@@ -19,22 +19,22 @@ const eventTypes = [
   {
     icon: Building2,
     title: "Corporativo",
-    description: "Transforme seu escritorio ou evento empresarial em uma galeria de arte sustentavel.",
+    description: "Transforme seu escritório ou evento empresarial em uma galeria de arte sustentável.",
   },
   {
     icon: PartyPopper,
     title: "Festas & Eventos",
-    description: "Casamentos, aniversarios e celebracoes com pecas unicas que impressionam.",
+    description: "Casamentos, aniversários e celebrações com peças únicas que impressionam.",
   },
   {
     icon: Camera,
-    title: "Producoes",
-    description: "Cenografia para filmes, comerciais, ensaios fotograficos e producoes audiovisuais.",
+    title: "Produções",
+    description: "Cenografia para filmes, comerciais, ensaios fotográficos e produções audiovisuais.",
   },
   {
     icon: Briefcase,
-    title: "Exposicoes",
-    description: "Monte sua propria exposicao temporaria com curadoria personalizada.",
+    title: "Exposições",
+    description: "Monte sua própria exposição temporária com curadoria personalizada.",
   },
 ]
 
@@ -42,9 +42,9 @@ const benefits = [
   "Curadoria personalizada para cada evento",
   "Entrega, montagem e desmontagem inclusa",
   "Seguro completo das obras",
-  "Assessoria de ambientacao",
-  "Precos especiais para eventos recorrentes",
-  "Obras exclusivas disponiveis",
+  "Assessoria de ambientação",
+  "Preços especiais para eventos recorrentes",
+  "Obras exclusivas disponíveis",
 ]
 
 const featuredRentals = [
@@ -102,12 +102,12 @@ export default function AluguelPage() {
                 Aluguel de<br />Obras
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Leve arte sustentavel para seu evento. Obras e mobiliario artistico disponiveis para aluguel temporario.
+                Leve arte sustentável para seu evento. Obras e mobiliário artístico disponíveis para aluguel temporário.
               </p>
             </div>
             <Button asChild className="btn-blob bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-base font-bold">
               <a href="#solicitar">
-                Solicitar orcamento
+                Solicitar orçamento
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
@@ -123,7 +123,7 @@ export default function AluguelPage() {
               <span>Tipos de Evento</span>
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl font-black text-foreground tracking-tight">
-              Para todas as ocasioes
+              Para todas as ocasiões
             </h2>
           </div>
           
@@ -162,7 +162,7 @@ export default function AluguelPage() {
                 </span>
               </span>
               <h2 className="mt-4 font-serif text-4xl sm:text-5xl font-black text-foreground tracking-tight">
-                Pecas disponiveis
+                Peças disponíveis
               </h2>
             </div>
             <Button asChild variant="outline" className="btn-blob border-2 border-foreground text-foreground hover:bg-foreground hover:text-background bg-transparent px-6">
@@ -253,16 +253,16 @@ export default function AluguelPage() {
       <section id="solicitar" className="py-16 bg-gradient-to-r from-accent via-accent to-primary">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center text-accent-foreground">
           <h2 className="font-serif text-4xl sm:text-5xl font-black">
-            Vamos criar algo<br />incrivel juntos?
+            Vamos criar algo<br />incrível juntos?
           </h2>
           <p className="mt-6 text-lg opacity-90 max-w-xl mx-auto">
-            Entre em contato para solicitar um orcamento personalizado para seu evento. Responderemos em ate 24h.
+            Entre em contato para solicitar um orçamento personalizado para seu evento. Responderemos em até 24h.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="btn-blob bg-background text-foreground hover:bg-background/90 px-8 py-6 text-lg font-bold">
               <a href="mailto:aluguel@arca.art">
                 <MessageCircle className="mr-2 h-5 w-5" />
-                Solicitar orcamento
+                Solicitar orçamento
               </a>
             </Button>
             <Button asChild variant="outline" className="btn-pill-right border-2 border-accent-foreground/30 text-accent-foreground hover:bg-accent-foreground/10 px-8 py-6 text-lg font-bold bg-transparent">

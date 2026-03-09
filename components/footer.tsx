@@ -13,8 +13,8 @@ const navigationColumns = [
     links: [
       { label: "Todas as Obras", href: "/galeria" },
       { label: "Novidades", href: "/galeria?novo=true" },
-      { label: "Alugavel", href: "/galeria?alugavel=true" },
-      { label: "A Venda", href: "/galeria?venda=true" },
+      { label: "Alugável", href: "/galeria?alugavel=true" },
+      { label: "À Venda", href: "/galeria?venda=true" },
     ],
   },
   {
@@ -22,7 +22,7 @@ const navigationColumns = [
     links: [
       { label: "Esculturas", href: "/galeria?categoria=esculturas" },
       { label: "Pinturas", href: "/galeria?categoria=pinturas" },
-      { label: "Instalacoes", href: "/galeria?categoria=instalacoes" },
+      { label: "Instalações", href: "/galeria?categoria=instalacoes" },
       { label: "Mixed Media", href: "/galeria?categoria=mixed-media" },
       { label: "Mobiliario", href: "/incomodo" },
     ],
