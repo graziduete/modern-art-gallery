@@ -3,9 +3,16 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { Instagram, Facebook, Linkedin, Mail, ArrowRight, MapPin, Phone, Send } from "lucide-react"
+import { Instagram, Facebook, Linkedin, Mail, ArrowRight, MapPin, Phone, Send, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog"
 
 const navigationColumns = [
   {
@@ -53,6 +60,15 @@ const socialLinks = [
 
 export function Footer() {
   const [email, setEmail] = useState("")
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const [contactForm, setContactForm] = useState({ nome: "", email: "", mensagem: "" })
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Simular envio - em produção integraria com API/email
+    setContactForm({ nome: "", email: "", mensagem: "" })
+    setIsContactModalOpen(false)
+  }
 
   return (
     <footer className="relative overflow-hidden">
@@ -106,13 +122,11 @@ export function Footer() {
               
               <div className="mt-6 flex flex-wrap gap-4 lg:justify-end">
                 <Button 
-                  asChild
+                  onClick={() => setIsContactModalOpen(true)}
                   className="btn-blob bg-foreground text-background hover:bg-foreground/90 px-8"
                 >
-                  <Link href="/contato">
-                    Fale Conosco
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  Fale Conosco
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button 
                   asChild
@@ -264,6 +278,74 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Modal Fale Conosco */}
+      <Dialog open={isContactModalOpen} onOpenChange={setIsContactModalOpen}>
+        <DialogContent className="sm:max-w-lg p-0 gap-0 overflow-hidden card-creative-2 border-4 border-primary/30 bg-white">
+          {/* Header com personalidade */}
+          <div className="relative px-6 pt-6 pb-4">
+            <div className="flex items-start gap-4">
+              <div className="shape-organic w-14 h-14 bg-accent/20 flex items-center justify-center shrink-0">
+                <MessageCircle className="h-7 w-7 text-accent" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="tag-slant inline-block px-4 py-2 bg-accent text-accent-foreground text-xs font-bold tracking-wider uppercase">
+                  <span>Estamos aqui</span>
+                </span>
+                <DialogTitle className="font-serif text-2xl sm:text-3xl font-black text-foreground mt-3">
+                  Fale Conosco
+                </DialogTitle>
+                <p className="mt-2 text-muted-foreground max-w-sm">
+                  Adoramos ouvir você! Dúvidas sobre obras, aluguel ou parcerias? Envie sua mensagem e retornamos em até 48h.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Formulário */}
+          <form onSubmit={handleContactSubmit} className="px-6 pb-6 space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="contact-nome" className="text-sm font-medium">Nome *</Label>
+              <Input
+                id="contact-nome"
+                value={contactForm.nome}
+                onChange={(e) => setContactForm((f) => ({ ...f, nome: e.target.value }))}
+                placeholder="Seu nome"
+                required
+                className="btn-pill-right border-2"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="contact-email" className="text-sm font-medium">Email *</Label>
+              <Input
+                id="contact-email"
+                type="email"
+                value={contactForm.email}
+                onChange={(e) => setContactForm((f) => ({ ...f, email: e.target.value }))}
+                placeholder="seu@email.com"
+                required
+                className="btn-pill-right border-2"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="contact-mensagem" className="text-sm font-medium">Mensagem *</Label>
+              <Textarea
+                id="contact-mensagem"
+                value={contactForm.mensagem}
+                onChange={(e) => setContactForm((f) => ({ ...f, mensagem: e.target.value }))}
+                placeholder="Conta pra gente: o que te traz até a Arca?"
+                rows={4}
+                required
+                className="resize-none border-2 rounded-xl"
+              />
+            </div>
+            <Button type="submit" className="w-full btn-blob bg-accent hover:bg-accent/90 text-accent-foreground py-6 font-bold text-base">
+              <Send className="mr-2 h-5 w-5" />
+              Enviar mensagem
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </footer>
   )
 }

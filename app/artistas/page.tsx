@@ -109,7 +109,7 @@ export default function ArtistasPage() {
               </p>
             </div>
             <Button asChild className="btn-blob bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-bold">
-              <Link href="/contato">
+              <Link href="/envie-sua-obra">
                 Quero ser artista
                 <Palette className="ml-2 h-5 w-5" />
               </Link>
@@ -215,7 +215,7 @@ export default function ArtistasPage() {
             Envie seu portfolio e faca parte do nosso coletivo de criadores sustentaveis.
           </p>
           <Button asChild className="btn-blob mt-8 bg-accent hover:bg-accent/90 text-accent-foreground px-10 py-6 text-lg font-bold">
-            <Link href="/contato">
+            <Link href="/envie-sua-obra">
               Enviar portfolio
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
