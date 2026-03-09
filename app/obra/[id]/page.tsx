@@ -1,0 +1,300 @@
+"use client"
+
+import { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { use } from "react"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import { RentalModal } from "@/components/rental-modal"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { 
+  ArrowLeft, 
+  Video, 
+  Tag, 
+  ShoppingCart, 
+  Calendar, 
+  Instagram,
+  Ruler,
+  Palette,
+  Eye
+} from "lucide-react"
+
+// Mock data - in a real app this would come from a database
+const artworksData: Record<string, {
+  id: string
+  title: string
+  artist: string
+  description: string
+  materials: string
+  dimensions: string
+  isAnamorphic: boolean
+  hasVideo: boolean
+  isRentable: boolean
+  isForSale: boolean
+  price?: string
+  images: string[]
+  videoUrl?: string
+}> = {
+  "1": {
+    id: "1",
+    title: "Metamorfose Urbana",
+    artist: "Marina Santos",
+    description: "Uma exploracao visual da transformacao constante das cidades. Esta escultura e composta inteiramente de materiais recolhidos nas ruas de Sao Paulo - pecas de metal descartadas, fragmentos de sinalizacao urbana e restos de construcao civil. A obra convida o espectador a reconsiderar o que chamamos de lixo e a beleza escondida nos restos da vida urbana.",
+    materials: "Metal reciclado, sinalizacao descartada, concreto, vidro reutilizado",
+    dimensions: "180 x 120 x 90 cm",
+    isAnamorphic: true,
+    hasVideo: true,
+    isRentable: true,
+    isForSale: true,
+    price: "R$ 15.000",
+    images: ["/images/artwork-1.jpg", "/images/artwork-2.jpg", "/images/artwork-3.jpg", "/images/artwork-4.jpg"],
+    videoUrl: "https://example.com/video",
+  },
+  "2": {
+    id: "2",
+    title: "Reflexos do Tempo",
+    artist: "Carlos Mendes",
+    description: "Uma instalacao que utiliza espelhos recuperados de edificios demolidos para criar um jogo de reflexos que representa a passagem do tempo. Cada espelho carrega a historia de seu local de origem, criando camadas de memoria visual.",
+    materials: "Espelhos antigos, estrutura de madeira de demolicao, LED",
+    dimensions: "200 x 150 x 100 cm",
+    isAnamorphic: false,
+    hasVideo: false,
+    isRentable: true,
+    isForSale: false,
+    images: ["/images/artwork-2.jpg", "/images/artwork-5.jpg", "/images/artwork-6.jpg"],
+  },
+  "3": {
+    id: "3",
+    title: "Fragmentos de Memoria",
+    artist: "Julia Oliveira",
+    description: "Uma colagem tridimensional que incorpora fotografias antigas resgatadas de bazares e brechos, criando uma narrativa visual sobre memorias coletivas e a passagem do tempo.",
+    materials: "Fotografias vintage, madeira reciclada, resina, tecido",
+    dimensions: "150 x 100 x 30 cm",
+    isAnamorphic: false,
+    hasVideo: true,
+    isRentable: false,
+    isForSale: true,
+    price: "R$ 8.500",
+    images: ["/images/artwork-3.jpg", "/images/artwork-7.jpg", "/images/artwork-8.jpg"],
+  },
+}
+
+// Default artwork for IDs not in our mock data
+const defaultArtwork = {
+  id: "default",
+  title: "Obra da Galeria",
+  artist: "Artista Arca",
+  description: "Uma obra unica criada com materiais sustentaveis, representando a visao da galeria Arca de transformar o descartado em arte extraordinaria.",
+  materials: "Materiais reciclados diversos",
+  dimensions: "Dimensoes variaveis",
+  isAnamorphic: false,
+  hasVideo: false,
+  isRentable: true,
+  isForSale: true,
+  images: ["/images/artwork-1.jpg"],
+}
+
+export default function ArtworkPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
+  const artwork = artworksData[id] || { ...defaultArtwork, id }
+  
+  const [selectedImage, setSelectedImage] = useState(0)
+  const [isRentalModalOpen, setIsRentalModalOpen] = useState(false)
+
+  return (
+    <main className="min-h-screen bg-background">
+      <Header />
+      
+      <section className="pt-24 pb-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Back button */}
+          <Link 
+            href="/galeria" 
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Voltar para galeria
+          </Link>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Image Gallery */}
+            <div className="space-y-4">
+              {/* Main Image */}
+              <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-muted">
+                <Image
+                  src={artwork.images[selectedImage] || "/placeholder.svg"}
+                  alt={artwork.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                {artwork.hasVideo && selectedImage === artwork.images.length - 1 && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-accent/50">
+                    <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                      <Video className="h-8 w-8 text-primary-foreground ml-1" />
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Thumbnails */}
+              <div className="flex gap-3 overflow-x-auto pb-2">
+                {artwork.images.map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedImage(index)}
+                    className={`relative shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                      selectedImage === index 
+                        ? "border-primary" 
+                        : "border-transparent hover:border-muted-foreground/50"
+                    }`}
+                  >
+                    <Image
+                      src={image || "/placeholder.svg"}
+                      alt={`${artwork.title} - imagem ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </button>
+                ))}
+                {artwork.hasVideo && (
+                  <button
+                    onClick={() => setSelectedImage(artwork.images.length - 1)}
+                    className="relative shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-muted-foreground/50 bg-accent flex items-center justify-center"
+                  >
+                    <Video className="h-6 w-6 text-accent-foreground" />
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Artwork Info */}
+            <div>
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {artwork.hasVideo && (
+                  <Badge variant="secondary" className="bg-accent text-accent-foreground">
+                    <Video className="h-3 w-3 mr-1" />
+                    Video
+                  </Badge>
+                )}
+                {artwork.isRentable && (
+                  <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
+                    <Tag className="h-3 w-3 mr-1" />
+                    Alugavel
+                  </Badge>
+                )}
+                {artwork.isForSale && (
+                  <Badge variant="secondary" className="bg-primary text-primary-foreground">
+                    A venda
+                  </Badge>
+                )}
+                {artwork.isAnamorphic && (
+                  <Badge variant="outline" className="border-primary text-primary">
+                    <Eye className="h-3 w-3 mr-1" />
+                    Anamorfica
+                  </Badge>
+                )}
+              </div>
+
+              <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
+                {artwork.title}
+              </h1>
+              <p className="mt-2 text-xl text-muted-foreground">
+                por {artwork.artist}
+              </p>
+
+              {artwork.price && (
+                <p className="mt-4 text-2xl font-semibold text-primary">
+                  {artwork.price}
+                </p>
+              )}
+
+              {/* Action Buttons */}
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                {artwork.isRentable && (
+                  <Button 
+                    onClick={() => setIsRentalModalOpen(true)}
+                    className="flex-1 bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                  >
+                    <Calendar className="h-4 w-4 mr-2" />
+                    Solicitar aluguel
+                  </Button>
+                )}
+                {artwork.isForSale && (
+                  <Button 
+                    className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+                  >
+                    <ShoppingCart className="h-4 w-4 mr-2" />
+                    {artwork.price ? "Comprar" : "Solicitar orcamento"}
+                  </Button>
+                )}
+              </div>
+
+              <Button 
+                variant="outline" 
+                className="mt-4 w-full bg-transparent"
+                asChild
+              >
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-4 w-4 mr-2" />
+                  Ver no Instagram
+                </a>
+              </Button>
+
+              {/* Description */}
+              <div className="mt-10 pt-8 border-t border-border">
+                <h2 className="font-serif text-xl font-semibold text-foreground mb-4">
+                  Sobre a obra
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {artwork.description}
+                </p>
+              </div>
+
+              {/* Details */}
+              <div className="mt-8 space-y-4">
+                <div className="flex items-start gap-3">
+                  <Palette className="h-5 w-5 text-primary mt-0.5" />
+                  <div>
+                    <p className="font-medium text-foreground">Materiais</p>
+                    <p className="text-sm text-muted-foreground">{artwork.materials}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Ruler className="h-5 w-5 text-primary mt-0.5" />
+                  <div>
+                    <p className="font-medium text-foreground">Dimensoes</p>
+                    <p className="text-sm text-muted-foreground">{artwork.dimensions}</p>
+                  </div>
+                </div>
+                {artwork.isAnamorphic && (
+                  <div className="flex items-start gap-3">
+                    <Eye className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium text-foreground">Obra Anamorfica</p>
+                      <p className="text-sm text-muted-foreground">
+                        Esta obra muda de aparencia conforme o angulo de visao do observador.
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+
+      {/* Rental Modal */}
+      <RentalModal
+        isOpen={isRentalModalOpen}
+        onClose={() => setIsRentalModalOpen(false)}
+        artworkTitle={artwork.title}
+      />
+    </main>
+  )
+}
