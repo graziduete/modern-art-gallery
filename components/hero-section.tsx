@@ -5,6 +5,12 @@ import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogClose,
+} from "@/components/ui/dialog"
 import { ArrowRight, Play, X } from "lucide-react"
 
 const heroImages = [
@@ -27,6 +33,7 @@ export function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
   const [activeHotspot, setActiveHotspot] = useState<number | null>(null)
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const heroRef = useRef<HTMLDivElement>(null)
 
@@ -118,15 +125,13 @@ export function HeroSection() {
                 </Link>
               </Button>
               <Button
-                asChild
                 size="lg"
                 variant="outline"
                 className="btn-pill-right border-2 border-white/50 text-white hover:bg-white/10 px-8 py-6 text-base font-bold uppercase tracking-wider bg-transparent"
+                onClick={() => setIsVideoModalOpen(true)}
               >
-                <Link href="#video">
-                  <Play className="mr-2 h-5 w-5" />
-                  Ver Vídeo
-                </Link>
+                <Play className="mr-2 h-5 w-5" />
+                Ver Vídeo
               </Button>
             </div>
 
@@ -240,6 +245,31 @@ export function HeroSection() {
         <span className="text-xs uppercase tracking-[0.2em] text-white/60">scroll</span>
         <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent" />
       </div>
+
+      {/* Modal do vídeo - quase fullscreen */}
+      <Dialog open={isVideoModalOpen} onOpenChange={setIsVideoModalOpen}>
+        <DialogContent className="!max-w-[80vw] !max-h-[80vh] !w-[80vw] !h-[80vh] p-0 gap-0 overflow-hidden bg-black border-2 border-border" showCloseButton={false}>
+          <DialogTitle className="sr-only">Vídeo da Arca</DialogTitle>
+          {/* Botão fechar visível */}
+          <DialogClose
+            className="absolute top-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+            aria-label="Fechar vídeo"
+          >
+            <X className="h-6 w-6" />
+          </DialogClose>
+          <div className="relative w-full h-full flex items-center justify-center bg-black">
+            <video
+              src="/videos/arca-video.mp4"
+              controls
+              autoPlay
+              playsInline
+              className="max-w-full max-h-full object-contain"
+            >
+              Seu navegador não suporta vídeos.
+            </video>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }

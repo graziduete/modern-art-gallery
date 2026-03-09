@@ -251,11 +251,6 @@ export function InteractiveSiteMap({
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
-        onWheel={(e) => {
-          e.preventDefault()
-          const delta = e.deltaY > 0 ? -0.1 : 0.1
-          setZoom(prev => Math.max(0.5, Math.min(3, prev + delta)))
-        }}
       >
         {/* Imagem da Planta */}
         <div
@@ -360,7 +355,7 @@ export function InteractiveSiteMap({
 
         {/* Instruções de uso */}
         <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm border border-border rounded-lg p-3 text-xs text-muted-foreground">
-          <p>🖱️ Arraste para mover • 🔍 Scroll para zoom • Clique nos pins para informações</p>
+          <p>🖱️ Arraste para mover • Use os botões para zoom • Clique nos pins para informações</p>
         </div>
       </div>
     </div>
