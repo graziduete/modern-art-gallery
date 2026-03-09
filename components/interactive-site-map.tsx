@@ -43,20 +43,24 @@ export function InteractiveSiteMap({
   const imageDisplayWidth = imageWidth * zoom
   const imageDisplayHeight = imageHeight * zoom
 
-  // Ajustar pan para manter imagem centralizada quando zoom muda
+  // Ajustar pan quando zoom ou fullscreen mudam
   useEffect(() => {
-    if (containerRef.current && imageRef.current) {
-      const container = containerRef.current
-      const containerWidth = container.clientWidth
-      const containerHeight = container.clientHeight
-      
-      // Centralizar imagem
-      setPan({
-        x: (containerWidth - imageDisplayWidth) / 2,
-        y: (containerHeight - imageDisplayHeight) / 2
-      })
+    const updatePan = () => {
+      if (containerRef.current) {
+        const container = containerRef.current
+        const containerWidth = container.clientWidth
+        const containerHeight = container.clientHeight
+        setPan({
+          x: (containerWidth - imageDisplayWidth) / 2,
+          y: (containerHeight - imageDisplayHeight) / 2
+        })
+      }
     }
-  }, [zoom, imageDisplayWidth, imageDisplayHeight])
+    updatePan()
+    const resizeObserver = new ResizeObserver(updatePan)
+    if (containerRef.current) resizeObserver.observe(containerRef.current)
+    return () => resizeObserver.disconnect()
+  }, [zoom, imageDisplayWidth, imageDisplayHeight, isFullscreen])
 
   const handleZoomIn = () => {
     setZoom(prev => Math.min(prev + 0.2, 3))
@@ -104,11 +108,26 @@ export function InteractiveSiteMap({
 
   useEffect(() => {
     const handleFullscreenChange = () => {
-      setIsFullscreen(!!document.fullscreenElement)
+      const fullscreen = !!document.fullscreenElement
+      setIsFullscreen(fullscreen)
+      if (fullscreen && containerRef.current) {
+        requestAnimationFrame(() => {
+          const el = containerRef.current
+          if (el) {
+            const containerWidth = el.clientWidth
+            const containerHeight = el.clientHeight
+            const scaleX = containerWidth / imageWidth
+            const scaleY = containerHeight / imageHeight
+            const fitZoom = Math.min(scaleX, scaleY, 3)
+            const zoomToUse = Math.max(fitZoom, 0.5)
+            setZoom(zoomToUse)
+          }
+        })
+      }
     }
     document.addEventListener("fullscreenchange", handleFullscreenChange)
     return () => document.removeEventListener("fullscreenchange", handleFullscreenChange)
-  }, [])
+  }, [imageWidth, imageHeight])
 
   const getIconColor = (type: PinLocation["type"]) => {
     const colors = {
@@ -246,7 +265,7 @@ export function InteractiveSiteMap({
       {/* Container do Mapa */}
       <div
         ref={containerRef}
-        className="relative w-full h-[600px] rounded-xl overflow-hidden border-2 border-border bg-muted shadow-xl cursor-move"
+        className="map-fullscreen-container relative w-full h-[600px] rounded-xl overflow-hidden border-2 border-border bg-muted shadow-xl cursor-move"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}

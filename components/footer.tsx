@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Instagram, Facebook, Linkedin, Mail, ArrowRight, MapPin, Phone, Send, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -69,6 +69,12 @@ export function Footer() {
     setContactForm({ nome: "", email: "", mensagem: "" })
     setIsContactModalOpen(false)
   }
+
+  useEffect(() => {
+    const handler = () => setIsContactModalOpen(true)
+    window.addEventListener("abrir-fale-conosco", handler)
+    return () => window.removeEventListener("abrir-fale-conosco", handler)
+  }, [])
 
   return (
     <footer className="relative overflow-hidden">

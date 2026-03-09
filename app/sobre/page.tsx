@@ -192,10 +192,12 @@ export default function SobrePage() {
                   Explorar Galeria
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="btn-pill-right border-2 px-8 py-6">
-                <Link href="/contato">
-                  Entre em Contato
-                </Link>
+              <Button
+                variant="outline"
+                className="btn-pill-right border-2 px-8 py-6"
+                onClick={() => window.dispatchEvent(new CustomEvent("abrir-fale-conosco"))}
+              >
+                Entre em Contato
               </Button>
             </div>
           </div>
