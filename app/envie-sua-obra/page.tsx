@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -20,6 +21,7 @@ const categorias = [
 ]
 
 export default function EnvieSuaObraPage() {
+  const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -66,15 +68,16 @@ export default function EnvieSuaObraPage() {
     <main className="min-h-screen bg-background">
       <Header />
 
-      <section className="pt-24 pb-16 px-4">
+      <section className="pt-28 pb-16 px-4">
         <div className="mx-auto max-w-2xl">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
+          <button
+            type="button"
+            onClick={() => router.back()}
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 py-2 -ml-2"
           >
             <ArrowLeft className="h-4 w-4" />
             Voltar
-          </Link>
+          </button>
 
           <div className="mb-10">
             <span className="tag-slant inline-block px-5 py-2 bg-accent text-accent-foreground text-sm font-bold tracking-[0.15em] uppercase">

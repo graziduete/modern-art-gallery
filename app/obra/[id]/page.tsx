@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { use } from "react"
+import { useRouter } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { RentalModal } from "@/components/rental-modal"
@@ -97,6 +98,7 @@ const defaultArtwork = {
 }
 
 export default function ArtworkPage({ params }: { params: Promise<{ id: string }> }) {
+  const router = useRouter()
   const { id } = use(params)
   const artwork = artworksData[id] || { ...defaultArtwork, id }
   
@@ -107,16 +109,17 @@ export default function ArtworkPage({ params }: { params: Promise<{ id: string }
     <main className="min-h-screen bg-background">
       <Header />
       
-      <section className="pt-24 pb-16">
+      <section className="pt-28 pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Back button */}
-          <Link 
-            href="/galeria" 
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
+          <button
+            type="button"
+            onClick={() => router.push("/galeria")}
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 py-2 -ml-2"
           >
             <ArrowLeft className="h-4 w-4" />
             Voltar para galeria
-          </Link>
+          </button>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Image Gallery */}

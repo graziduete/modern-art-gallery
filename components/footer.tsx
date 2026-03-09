@@ -46,9 +46,9 @@ const navigationColumns = [
 ]
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/arca.atelierural/", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/arca-atelierural/", label: "LinkedIn" },
+  { icon: Facebook, href: "https://www.facebook.com/aarca.atelierural", label: "Facebook" },
 ]
 
 export function Footer() {

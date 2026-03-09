@@ -248,7 +248,7 @@ export function HeroSection() {
 
       {/* Modal do vídeo - quase fullscreen */}
       <Dialog open={isVideoModalOpen} onOpenChange={setIsVideoModalOpen}>
-        <DialogContent className="!max-w-[80vw] !max-h-[80vh] !w-[80vw] !h-[80vh] p-0 gap-0 overflow-hidden bg-black border-2 border-border" showCloseButton={false}>
+        <DialogContent className="!w-[min(45vh,80vw)] !h-[80vh] !max-w-[80vw] !max-h-[80vh] p-0 gap-0 overflow-hidden bg-black border-2 border-border aspect-[9/16]" showCloseButton={false}>
           <DialogTitle className="sr-only">Vídeo da Arca</DialogTitle>
           {/* Botão fechar visível */}
           <DialogClose
@@ -263,7 +263,7 @@ export function HeroSection() {
               controls
               autoPlay
               playsInline
-              className="max-w-full max-h-full object-contain"
+              className="w-full h-full object-contain"
             >
               Seu navegador não suporta vídeos.
             </video>
