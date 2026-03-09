@@ -153,7 +153,7 @@ export default function LojaPage() {
                     className="btn-blob mt-auto pt-5 w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-all duration-300"
                   >
                     <a 
-                      href={`https://www.instagram.com/direct/t/arca.atelierural?text=Olá! Tenho interesse no produto: ${encodeURIComponent(product.name)}`} 
+                      href="https://www.instagram.com/arca.atelierural/"
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2"

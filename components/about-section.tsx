@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button"
 import { Plus, Recycle, Eye, Sparkles } from "lucide-react"
 
 const hotspots = [
-  { id: 1, x: 85, y: 15, feature: "recycled" },
-  { id: 2, x: 78, y: 35, feature: "anamorphic" },
-  { id: 3, x: 70, y: 55, feature: "unique" },
-  { id: 4, x: 60, y: 75, feature: "texture" },
-  { id: 5, x: 45, y: 88, feature: "materials" },
+  { id: 1, x: 30, y: 22, feature: "recycled", tooltipLeft: false },
+  { id: 2, x: 55, y: 38, feature: "anamorphic", tooltipLeft: true },
+  { id: 3, x: 35, y: 55, feature: "unique", tooltipLeft: false },
+  { id: 4, x: 50, y: 72, feature: "texture", tooltipLeft: true },
+  { id: 5, x: 40, y: 78, feature: "materials", tooltipLeft: false },
 ]
 
 const features = {
@@ -36,10 +36,12 @@ export function AboutSection() {
             
             <div className="relative aspect-[4/5] overflow-hidden bg-muted mask-rect-organic-1 mask-rect-organic-hover shadow-xl">
               <Image
-                src="/images/about-gallery.jpg"
-                alt="Interior da galeria Arca"
+                src="/images/about-gallery-gato.png"
+                alt="Escultura de gato em materiais reciclados - Galeria Arca"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 800px"
+                quality={95}
               />
               
               {/* Interactive Hotspots */}
@@ -50,7 +52,7 @@ export function AboutSection() {
                 return (
                   <button
                     key={spot.id}
-                    className="absolute z-20 group"
+                    className="absolute z-20 group -translate-x-1/2 -translate-y-1/2"
                     style={{ left: `${spot.x}%`, top: `${spot.y}%` }}
                     onMouseEnter={() => setActiveHotspot(spot.feature)}
                     onMouseLeave={() => setActiveHotspot(null)}
@@ -72,7 +74,9 @@ export function AboutSection() {
                     
                     {/* Tooltip */}
                     {isActive && (
-                      <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-card border border-border shadow-xl p-4 min-w-48 z-30">
+                      <div className={`absolute top-1/2 -translate-y-1/2 bg-card border border-border shadow-xl p-4 min-w-48 z-30 ${
+                        spot.tooltipLeft ? "right-full mr-4" : "left-full ml-4"
+                      }`}>
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
                             <feature.icon className="h-5 w-5 text-accent" />

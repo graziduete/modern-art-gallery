@@ -49,28 +49,28 @@ const benefits = [
 
 const featuredRentals = [
   {
-    id: "r1",
+    id: "1",
     title: "Metamorfose Urbana",
     artist: "Marina Santos",
     imageUrl: "/images/artwork-1.jpg",
     pricePerDay: "R$ 350/dia",
   },
   {
-    id: "r2",
+    id: "4",
     title: "Ecossistema Suspenso",
     artist: "Roberto Lima",
     imageUrl: "/images/artwork-4.jpg",
     pricePerDay: "R$ 500/dia",
   },
   {
-    id: "r3",
-    title: "Luminaria Cosmos",
+    id: "f3",
+    title: "Luminária Cosmos",
     artist: "Julia Oliveira",
     imageUrl: "/images/furniture-3.jpg",
     pricePerDay: "R$ 180/dia",
   },
   {
-    id: "r4",
+    id: "f1",
     title: "Poltrona Aurora",
     artist: "Estudio Arca",
     imageUrl: "/images/furniture-1.jpg",
@@ -232,8 +232,8 @@ export default function AluguelPage() {
             <div className="relative">
               <div className="card-creative-1 overflow-hidden border-2 border-border">
                 <Image
-                  src="/images/about-gallery.jpg"
-                  alt="Evento com obras da Arca"
+                  src="/images/aluguel-evento-arca.png"
+                  alt="Fachada da Galeria Arca à noite - evento com público"
                   width={600}
                   height={500}
                   className="w-full h-auto object-cover"
