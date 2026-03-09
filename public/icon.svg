@@ -1,4 +1,17 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="6" fill="#0a0a0a"/>
-  <text x="16" y="24" text-anchor="middle" fill="#E85D04" font-size="20" font-weight="800" font-family="system-ui">A</text>
+  <rect width="32" height="32" rx="6" fill="#F4E4C8"/>
+  <path
+    d="M8 18L16 6L24 18L8 18Z"
+    stroke="#5F7443"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M10 18H22V24H10V18Z"
+    stroke="#5F7443"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
 </svg>
